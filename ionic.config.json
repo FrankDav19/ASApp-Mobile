@@ -1,0 +1,7 @@
+{
+  "name": "ASApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
