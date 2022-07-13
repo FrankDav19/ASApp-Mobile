@@ -1,0 +1,83 @@
+$item-bg: #C6C86C;
+
+.list-item {
+  padding: .5rem;
+  background-color: $item-bg;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: .5rem;
+  border-radius: 10px;
+}
+
+.right-side {
+  width: 80%;
+  display: inline-block;
+}
+
+.left-side {
+  width: 20%;
+  display: inline-block;
+}
+
+h2, p {
+  color: white;
+}
+
+.location h2 {
+  margin-bottom: 0;
+  margin-top: 0;
+  text-transform: uppercase;
+
+}
+
+.loc-detail p {
+  margin-top: 0;
+  margin-bottom: .3rem;
+  font-size: small;
+}
+
+.precipitation{
+  display: inline-block;
+  padding-right: 1rem;
+}
+
+
+.weather-icons ion-icon {
+  display: inline-block;
+  color: white;
+}
+
+.weather-icons p {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: small;
+  margin-left: .5rem;
+}
+
+.air-quality{
+  display: inline-block;
+  padding-right: 1rem;
+}
+
+.air-quality p {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: small;
+  margin-left: .5rem;
+}
+
+.temp{
+  margin: 0;
+  color: white;
+  text-align: center;
+  font-size: 25pt;
+}
+
+.temp-label{
+  font-size: 9pt;
+  margin: 0;
+  text-align: center;
+}
+

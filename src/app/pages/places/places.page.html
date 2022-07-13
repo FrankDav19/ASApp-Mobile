@@ -1,0 +1,13 @@
+<ion-header collapse="condense">
+  <ion-toolbar>
+    <ion-title size="large">Clima</ion-title>
+  </ion-toolbar>
+  <ion-searchbar showCancelButton="focus" placeholder="Buscar ciudad o región" cancelButtonText="Cancelar"></ion-searchbar>
+</ion-header>
+
+<ion-content [fullscreen]="false">
+
+  <app-fav-element [weatherData]="weatherData"></app-fav-element>
+
+
+</ion-content>

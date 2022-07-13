@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20.002" height="16.001" viewBox="0 0 20.002 16.001">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="20.002" height="16.001" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="air-quality" clip-path="url(#clip-path)">
+    <path id="cloud-fill" d="M4.406,3.342A5.53,5.53,0,0,1,8,2a5.137,5.137,0,0,1,5.166,4.579A3.223,3.223,0,0,1,12.688,13H3.781a3.675,3.675,0,0,1-.839-7.275A4.206,4.206,0,0,1,4.406,3.342Z" transform="translate(0 -2)" fill="#fff"/>
+    <g id="exclamation-triangle" transform="translate(8 4.502)">
+      <path id="Path_7" data-name="Path 7" d="M5.954,1.762a.1.1,0,0,1,.1,0,.109.109,0,0,1,.04.043l5.143,8.75a.131.131,0,0,1,0,.137.122.122,0,0,1-.04.045.087.087,0,0,1-.049.013H.86a.086.086,0,0,1-.05-.013.122.122,0,0,1-.041-.045.132.132,0,0,1,0-.137L5.913,1.8a.11.11,0,0,1,.04-.043Zm.783-.338a.847.847,0,0,0-1.47,0L.124,10.174A.875.875,0,0,0,.859,11.5H11.144a.875.875,0,0,0,.735-1.325Z" transform="translate(0 0)" fill="red"/>
+      <path id="Path_8" data-name="Path 8" d="M7,10.249a.75.75,0,1,1,.75.75A.75.75,0,0,1,7,10.249Zm.073-4.5a.679.679,0,1,1,1.35,0l-.263,2.63a.414.414,0,0,1-.825,0Z" transform="translate(-1.75 -0.999)" fill="red"/>
+    </g>
+  </g>
+</svg>

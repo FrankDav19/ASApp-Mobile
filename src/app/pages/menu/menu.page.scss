@@ -1,0 +1,33 @@
+.container{
+  margin-top: 0;
+  margin-left: 0;
+  margin-bottom: .5rem;
+  width: 100%;
+  max-height: max-content;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  vertical-align: middle;
+
+}
+
+.userPicture{
+  display: inline-block;
+  width: 30%;
+  height: 5rem;
+}
+
+.userPicture ion-icon{
+  color: #A09574;
+  width: 100%;
+  height: 100%;
+}
+
+.label{
+  color: #483C1F;
+  display: inline-block;
+  width: max-content;
+}
+
+ion-list ion-icon{
+  color: #7E8925;
+}
