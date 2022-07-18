@@ -1,14 +1,14 @@
-import { Component, OnInit, Input   } from '@angular/core';
-import { IWeatherData } from '../../interfaces/weatherData';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { IStation } from '../../interfaces/iStation';
 
 @Component({
   selector: 'app-fav-element',
   templateUrl: './fav-element.component.html',
   styleUrls: ['./fav-element.component.scss'],
 })
-export class FavElementComponent implements OnInit {
+export class FavElementComponent implements OnInit, OnChanges {
 
-  @Input() weatherData? : IWeatherData[];
+  @Input() stations?: any[];
 
   constructor() {
   }
@@ -17,15 +17,12 @@ export class FavElementComponent implements OnInit {
 
   }
 
-  public pm25Mapping(level : number){
-    const sensorMax = 500.4;
-    const indexMax= 500;
-
-    var index = (level*indexMax)/sensorMax;
-
-
-    return index;
+  ngOnChanges(): void {
+    //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
+    //Add '${implements OnChanges}' to the class.
+    if (this.stations != undefined) {
+      console.log(this.stations);
+    }
   }
-
 
 }

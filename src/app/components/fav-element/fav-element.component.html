@@ -1,16 +1,16 @@
-<ion-list *ngFor="let data of weatherData;">
-  <div class="list-item" routerLink="../station/{{data.stationId}}" routerDirection="forward">
+<ion-list *ngFor="let station of stations;">
+  <div class="list-item" routerLink="../station/{{station._id}}" routerDirection="forward">
     <div class="right-side">
       <div class="location">
-        <h2>{{data.area}}</h2>
+        <h2>{{station.name}}</h2>
       </div>
       <div class="loc-detail">
-        <p>{{data.location}}</p>
+        <p>{{station.location[0]}}</p>
       </div>
       <div class="weather-icons">
         <div class="precipitation">
           <ion-icon name="rainy-outline"></ion-icon>
-          <p class="icon-label">{{data.rainMM}}mm</p>
+          <!-- <p class="icon-label">{{station.rainMM}}mm</p> -->
         </div>
         <div class="air-quality">
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20.002"
@@ -34,13 +34,13 @@
               </g>
             </g>
           </svg>
-          <p>{{data.pm25}} μg/m3</p>
+          <!-- <p>{{station.pm25}} μg/m3</p> -->
         </div>
       </div>
     </div>
 
     <div class="left-side">
-      <h1 class="temp">{{data.temp}}º</h1>
+      <!-- <h1 class="temp">{{station.temp}}º</h1> -->
       <p class="temp-label">Tiempo Real</p>
     </div>
   </div>

@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./station.page.scss'],
 })
 export class StationPage implements OnInit {
-  places = 'asapp/places';
 
   constructor() { }
 

@@ -11,5 +11,4 @@ export interface IWeatherData {
   temp?: number,
   wDirection?: string,
   wSpeed?: number,
-
 }
