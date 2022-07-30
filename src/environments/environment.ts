@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  socketURL: 'http://192.168.0.142:3010'
+  socketURL: 'http://localhost:3010',
+  apiURL: 'http://localhost:3010/atspace'
 };
 
 /*

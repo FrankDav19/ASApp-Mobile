@@ -1,28 +1,19 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
-import { IStation } from '../../interfaces/iStation';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-fav-element',
   templateUrl: './fav-element.component.html',
   styleUrls: ['./fav-element.component.scss'],
 })
-export class FavElementComponent implements OnInit, OnChanges {
 
-  @Input() stations?: any[];
+export class FavElementComponent implements OnInit{
+
+  @Input() stationsInput?: any[];
 
   constructor() {
   }
 
   ngOnInit() {
-
-  }
-
-  ngOnChanges(): void {
-    //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
-    //Add '${implements OnChanges}' to the class.
-    if (this.stations != undefined) {
-      console.log(this.stations);
-    }
   }
 
 }
