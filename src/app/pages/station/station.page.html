@@ -1,11 +1,132 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button text="Lugares" [defaultHref]="places"></ion-back-button>
+      <ion-back-button text="Places" [defaultHref]="places"></ion-back-button>
     </ion-buttons>
-    <ion-title>station1</ion-title>
+    <ion-title *ngIf="Station">{{Station.name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content *ngIf="Station">
+  <div class="content">
+    <div class="header">
+      <h3 #location>Gral. escobedo</h3>
+      <h1 #temp>{{Station.readings[0].temp}}º</h1>
+      <p>ACTUAL CONDITIONS</p>
+    </div>
+    <ion-grid>
+
+      <ion-row>
+        <ion-col>
+          <div class="card">
+            <p class="property">WIND SPEED</p>
+            <ion-row>
+              <ion-col class="icon">
+                <ion-icon name="speedometer-outline"></ion-icon>
+              </ion-col>
+              <ion-col class="measurements">
+                <h1 class="value">{{Station.readings[0].wSpeed || '--'}}</h1>
+                <p class="units">KM/H</p>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="card">
+            <p class="property">WIND DIRECTION</p>
+            <ion-row>
+              <ion-col class="icon">
+                <ion-icon name="compass-outline"></ion-icon>
+              </ion-col>
+              <ion-col class="measurements">
+                <h1 class="value">{{Station.readings[0].wDirection || '--'}}</h1>
+                <p class="units">MAGNETIC</p>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <div class="card">
+            <p class="property">PRECIPITATION</p>
+            <ion-row>
+              <ion-col class="icon">
+                <ion-icon name="rainy-outline"></ion-icon>
+              </ion-col>
+              <ion-col class="measurements">
+                <h1 class="value">{{Station.readings[0].rainMM || '--'}}</h1>
+                <p class="units">MM</p>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="card">
+            <p class="property">HUMIDITY</p>
+            <ion-row>
+              <ion-col class="icon">
+                <ion-icon name="water-outline"></ion-icon>
+              </ion-col>
+              <ion-col class="measurements">
+                <h1 class="value">{{Station.readings[0].humidity || '--'}}</h1>
+                <p class="units">%</p>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <div class="card">
+            <p class="property">POLLUTION <br> (PM 1.0)</p>
+            <ion-row>
+              <ion-col class="icon">
+                <ion-icon src="/assets/air-quality.svg"></ion-icon>
+              </ion-col>
+              <ion-col class="measurements">
+                <h1 class="value">{{Station.readings[0].pm1 || '--'}}</h1>
+                <p class="units">μg/m3</p>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="card">
+            <p class="property">POLLUTION <br> (PM 2.5)</p>
+            <ion-row>
+              <ion-col class="icon">
+                <ion-icon src="/assets/air-quality.svg"></ion-icon>
+              </ion-col>
+              <ion-col class="measurements">
+                <h1 class="value">{{Station.readings[0].pm25 || '--'}}</h1>
+                <p class="units">μg/m3</p>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <div class="card">
+            <p class="property">POLLUTION <br> (PM 10)</p>
+            <ion-row>
+              <ion-col class="icon">
+                <ion-icon src="/assets/air-quality.svg"></ion-icon>
+              </ion-col>
+              <ion-col class="measurements">
+                <h1 class="value">{{Station.readings[0].pm10 || '--'}}</h1>
+                <p class="units">μg/m3</p>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </div>
 </ion-content>

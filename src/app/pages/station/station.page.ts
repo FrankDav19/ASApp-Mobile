@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Socket } from 'ngx-socket-io';
+import { IStation } from '../../interfaces/iStation';
+import { environment } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-station',
@@ -6,19 +11,36 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./station.page.scss'],
 })
 export class StationPage implements OnInit {
+  places = '/asapp/places';
 
-  constructor() { }
+  Station: IStation;
+
+
+  constructor(private socket: Socket,
+    private route: ActivatedRoute) {
+    const activeStationURL = this.route.snapshot.paramMap.get('id');
+
+    this.getStation(activeStationURL).then(stationQuery => {
+      this.Station = stationQuery.station;
+    });
+
+    this.socket.on('newReading', data => {
+      if(data.stationID == this.Station._id){
+        this.Station.readings[0] = data.updatedReading;
+      }
+    });
+  }
 
   ngOnInit() {
+  }
 
-    // if (data.operationType == 'update') {
-    //   var stationIndex = this.Stations.findIndex(station => station._id == data.documentKey._id);
-    //   var updateId = Object.keys(data.updateDescription.updatedFields)[1]
+  private async getStation(stationID: string) {
+    const response = await fetch(`${environment.apiURL}/stations/${stationID}`, { method: 'GET' });
 
-    //   console.log(data);
-
-    //   this.Stations[stationIndex].readings.push(data.updateDescription.updatedFields[updateId]);
-    // }
+    if (response.ok == false) {
+      console.log(`Error! status: ${response.status}`);
+    }
+    return await response.json();
   }
 
 }
