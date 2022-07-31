@@ -4,7 +4,7 @@ import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
-    path: 'asapp',
+    path: '',
     component: TabsPage,
     children: [
       {
@@ -29,11 +29,6 @@ const routes: Routes = [
         pathMatch: 'full'
       }
     ]
-  },
-  {
-    path: '',
-    redirectTo: '/asapp/places',
-    pathMatch: 'full'
   }
 ];
 

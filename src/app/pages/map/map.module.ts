@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { mapPage } from './map.page';
 
 import { Tab1PageRoutingModule } from './map-routing.module';
+import { MapPopupComponent } from 'src/app/components/map-popup/map-popup.component';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import { Tab1PageRoutingModule } from './map-routing.module';
     FormsModule,
     Tab1PageRoutingModule
   ],
-  declarations: [mapPage]
+  declarations: [mapPage],
+  entryComponents: [MapPopupComponent]
 })
 export class mapPageModule {}

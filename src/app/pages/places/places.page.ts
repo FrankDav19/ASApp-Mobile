@@ -4,6 +4,7 @@ import { Socket } from 'ngx-socket-io';
 import { IStation } from '../../interfaces/iStation';
 import { environment } from 'src/environments/environment';
 import { LocationService } from '../../services/location.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-tab2',
@@ -13,11 +14,13 @@ import { LocationService } from '../../services/location.service';
 
 export class placesPage implements OnInit, OnDestroy {
   rootPage: any = TabsPage;
-
-  Stations: IStation[];
+  public Stations: IStation[];
+  public searchField: FormControl;
 
   constructor(private socket: Socket,
     private locationService: LocationService) {
+    this.searchField = new FormControl('');
+
     this.getStations().then(stationsQuery => {
       this.Stations = stationsQuery.stations;
 
@@ -28,11 +31,9 @@ export class placesPage implements OnInit, OnDestroy {
       })
     });
 
-
     this.socket.on('stationInsert', newStation => {
       this.Stations.push(newStation);
     });
-
 
     this.socket.on('newReading', data => {
       var stIndex = this.Stations.findIndex((station) => station._id === data.stationID);

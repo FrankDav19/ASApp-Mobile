@@ -2,7 +2,8 @@
   <ion-toolbar>
     <ion-title size="large">Clima</ion-title>
   </ion-toolbar>
-  <ion-searchbar showCancelButton="focus" placeholder="Buscar ciudad o región" cancelButtonText="Cancelar"></ion-searchbar>
+  <ion-searchbar [formControl]="searchField" debounce="100" showCancelButton="focus" placeholder="Buscar ciudad o región" cancelButtonText="Cancelar">
+  </ion-searchbar>
 </ion-header>
 
 <ion-content [fullscreen]="false">
