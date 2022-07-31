@@ -6,12 +6,12 @@
           <h2>{{station.name}}</h2>
         </div>
         <div class="loc-detail">
-          <p>{{station.location.coordinates[0]}}</p>
+          <p>{{station.location.name}}</p>
         </div>
         <div class="weather-icons">
           <div class="precipitation">
             <ion-icon name="rainy-outline"></ion-icon>
-            <p class="icon-label">{{station.readings[0]?.rainMM}}mm</p>
+            <p class="icon-label">{{station.readings[0]?.rainMM || '-- '}}mm</p>
           </div>
           <div class="air-quality">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20.002"
@@ -35,13 +35,13 @@
                 </g>
               </g>
             </svg>
-            <p>{{station.readings[0]?.pm25 || '--'}} μg/m3</p>
+            <p>{{station.readings[0]?.pm25 || '-- '}} μg/m3</p>
           </div>
         </div>
       </div>
 
       <div class="left-side">
-        <h1 class="temp">{{station.readings[0]?.temp}}º</h1>
+        <h1 class="temp">{{station.readings[0]?.temp || '-- '}}º</h1>
         <p class="temp-label">Tiempo Real</p>
       </div>
     </div>

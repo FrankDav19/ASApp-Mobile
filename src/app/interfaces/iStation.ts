@@ -1,7 +1,11 @@
 export interface IStation {
   _id : string
   name: string,
-  location: Array<number>,
+  location: {
+    type: string,
+    coordinates: Array<number>,
+    name?: string
+  },
   units: Units,
   readings?: [{
     humidity?: number,

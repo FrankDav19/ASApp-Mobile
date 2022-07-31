@@ -10,8 +10,8 @@
 <ion-content *ngIf="Station">
   <div class="content">
     <div class="header">
-      <h3 #location>Gral. escobedo</h3>
-      <h1 #temp>{{Station.readings[0].temp}}º</h1>
+      <h3 id="location">{{this.Station.location.name}}</h3>
+      <h1 id="temp">{{Station.readings[0].temp || '--'}}º</h1>
       <p>ACTUAL CONDITIONS</p>
     </div>
     <ion-grid>

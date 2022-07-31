@@ -3,6 +3,7 @@ import { TabsPage } from '../../shared/tabs/tabs.page';
 import { Socket } from 'ngx-socket-io';
 import { IStation } from '../../interfaces/iStation';
 import { environment } from 'src/environments/environment';
+import { LocationService } from '../../services/location.service';
 
 @Component({
   selector: 'app-tab2',
@@ -15,9 +16,16 @@ export class placesPage implements OnInit, OnDestroy {
 
   Stations: IStation[];
 
-  constructor(private socket: Socket) {
+  constructor(private socket: Socket,
+    private locationService: LocationService) {
     this.getStations().then(stationsQuery => {
       this.Stations = stationsQuery.stations;
+
+      this.Stations.forEach(station => {
+        locationService.reverseGeolocation(station.location.coordinates[1], station.location.coordinates[0]).then(locationData => {
+          station.location.name = locationData.features[1].place_name;
+        });
+      })
     });
 
 
