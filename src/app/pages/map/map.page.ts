@@ -11,7 +11,7 @@ export class mapPage implements AfterViewInit {
   private map;
 
   private mapInit() {
-    this.map = L.map('map').locate({ setView: true, maxZoom: 25 });
+    this.map = L.map('map').locate({ setView: true, maxZoom: 50 });
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
@@ -19,7 +19,6 @@ export class mapPage implements AfterViewInit {
     }).addTo(this.map);
 
     L.control.scale().addTo(this.map);
-
   }
 
 

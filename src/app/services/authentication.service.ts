@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, tap, switchMap } from 'rxjs/operators';
-import { BehaviorSubject, from, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, from, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 import { Storage } from '@capacitor/storage';
@@ -39,6 +39,15 @@ export class AuthenticationService {
       }),
       tap(_ => {
         this.isAuthenticated.next(true);
+      })
+    )
+  }
+
+  signup(credentials: {name, username, email, password}): Observable<any> {
+    return this.http.post(`${environment.apiURL}/create/user`, credentials).pipe(
+      map((data: any) => data.token),
+      switchMap(token => {
+        return from(token);
       })
     )
   }

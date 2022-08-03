@@ -1,9 +1,55 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>signup</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <div class="container">
 
+    <ion-icon id="logo" src="/assets/logo.svg"></ion-icon>
+
+    <h1 id="tag1">Crear cuenta</h1>
+    <p id="tag2">Al continuar, aceptas nuestra <span>Politica de Privacidad</span></p>
+
+    <div class="auth-providers">
+      <ion-button type="button" expand="block" fill="clear">
+        <ion-icon name="logo-google" slot="start"></ion-icon>
+        Continuar con Google
+      </ion-button>
+      <ion-button type="button" expand="block" fill="clear">
+        <ion-icon name="logo-facebook" slot="start"></ion-icon>
+        Continuar con Facebook
+      </ion-button>
+    </div>
+
+    <form (ngSubmit)="signup()" [formGroup]="credentials">
+
+      <div class="input-group">
+        <ion-item>
+          <ion-input type="text" placeholder="Nombre" formControlName="name"></ion-input>
+        </ion-item>
+        <div *ngIf="(name.dirty || name.touched) && name.errors" class="errors">
+          <span *ngIf="name.errors?.required">Ingresa tu nombre</span>
+        </div>
+        <ion-item>
+          <ion-input type="text" placeholder="Nombre de usuario" formControlName="username"></ion-input>
+        </ion-item>
+        <div *ngIf="(username.dirty || username.touched) && username.errors" class="errors">
+          <span *ngIf="username.errors?.required">Ingresa un nombre de usuario</span>
+        </div>
+        <ion-item>
+          <ion-input type="email" placeholder="Correo electronico" formControlName="email"></ion-input>
+        </ion-item>
+        <div *ngIf="(email.dirty || email.touched) && email.errors" class="errors">
+          <span *ngIf="email.errors?.required">El correo es requerido</span>
+          <span *ngIf="email.errors?.email">El correo es inválido</span>
+        </div>
+        <ion-item>
+          <ion-input type="password" placeholder="Contraseña" formControlName="password"></ion-input>
+        </ion-item>
+        <div *ngIf="(password.dirty || password.touched) && password.errors" class="errors">
+          <span *ngIf="password.errors?.required">La contraseña es requerida</span>
+          <span *ngIf="password.errors?.minlength">La contraseña debe ser de 6 caracteres</span>
+        </div>
+      </div>
+
+      <ion-button id="submit" type="submit" [disabled]="!credentials.valid" fill="clear">Continuar</ion-button>
+    </form>
+    <a id="login" (click)="login()">Tienes una cuenta? Inicia Sesion!</a>
+  </div>
 </ion-content>
