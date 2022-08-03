@@ -1,10 +1,14 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>intro</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <ion-button (click)="start()" fill="outline" color="dark">Start</ion-button>
+  <ion-icon src="/assets/logo.svg"></ion-icon>
+
+
+  <div class="brand">
+    <h1 id="brand1">ATMOSPHERIC</h1>
+    <h1 id="brand2">SPACE</h1>
+  </div>
+
+
+  <ion-button id="signin" (click)="signin()" fill="clear">Inicia Sesion</ion-button>
+  <a id="signup" (click)="signup()">Crea una cuenta!</a>
 
 </ion-content>

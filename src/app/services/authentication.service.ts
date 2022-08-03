@@ -6,7 +6,6 @@ import { environment } from 'src/environments/environment';
 
 import { Storage } from '@capacitor/storage';
 
-
 const TOKEN_KEY = 'my-token';
 
 @Injectable({
@@ -24,7 +23,7 @@ export class AuthenticationService {
     const token = await Storage.get({ key: TOKEN_KEY });
 
     if (token && token.value) {
-      console.log('set token: ', token.value);
+      // console.log('set token: ', token.value);
       this.token = token.value;
       this.isAuthenticated.next(true);
     } else {
@@ -36,7 +35,7 @@ export class AuthenticationService {
     return this.http.post(`${environment.apiURL}/login`, credentials).pipe(
       map((data: any) => data.token),
       switchMap(token => {
-        return from(Storage.set({key: TOKEN_KEY, value: token}));
+        return from(Storage.set({key: TOKEN_KEY, value: JSON.stringify(token)}));
       }),
       tap(_ => {
         this.isAuthenticated.next(true);

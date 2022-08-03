@@ -1,0 +1,88 @@
+$beige: #E7EFCD;
+$orange: #C6C86C;
+$green: #7E8925;
+$brown: #483C1F;
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600;700&family=Julius+Sans+One&display=swap');
+
+ion-content {
+  border: .5rem;
+  border-style: solid;
+  border-color: $beige;
+  text-align: center;
+  overflow-y: hidden;
+}
+
+.container{
+  width: max-content;
+  height: inherit;
+  padding: 1rem;
+
+}
+
+#logo{
+  height: 4rem;
+  width: 4rem;
+}
+
+#tag1{
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 28pt;
+  color: $brown;
+}
+
+#tag2{
+  font-family: 'Archivo Narrow', sans-serif;
+  font-weight: 400;
+  text-align: left;
+  color: $green;
+}
+
+#tag2 > span{
+  color: $orange;
+}
+
+.auth-providers{
+  margin-top: 2rem;
+}
+
+.auth-providers ion-button{
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 12pt;
+  color: $green;
+  border-color: $green;
+  border-style: solid;
+  border-radius: 25px;
+}
+
+form{
+  margin-top: 1rem;
+  border-top: $beige;
+  border-top-style: solid;
+  padding-top: 1rem;
+}
+
+.input-group ion-item{
+  margin-bottom: .5rem;
+
+}
+
+#submit{
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 15pt;
+  color: $green;
+  border-color: $green;
+  border-style: solid;
+  border-radius: 25px;
+  display: block;
+  width: auto;
+  margin: auto;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+}
+#signup{
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 15pt;
+  color: $green;
+}
+

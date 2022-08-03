@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  socketURL: 'http://192.168.0.11:3010',
-  apiURL: 'http://192.168.0.11:3010/ASAPI',
+  socketURL: 'http://localhost:3010',
+  apiURL: 'http://localhost:3010/ASAPI',
   maptilerAPIKey: '45RbJRIixLAGHAvPPRA2'
 };
 

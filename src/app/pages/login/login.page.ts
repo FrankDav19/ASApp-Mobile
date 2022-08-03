@@ -22,8 +22,8 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
     this.credentials = this.fb.group({
-      email: ['eve.holt@reqres.in', [Validators.required, Validators.email]],
-      password: ['cityslicka', [Validators.required, Validators.minLength(6)]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
@@ -55,6 +55,10 @@ export class LoginPage implements OnInit {
 
   get password() {
     return this.credentials.get('password');
+  }
+
+  async signup() {
+    this.router.navigateByUrl('/login', { replaceUrl:true });
   }
 
 }

@@ -1,39 +1,43 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <form (ngSubmit)="login()" [formGroup]="credentials">
-    <div class="input-group">
-      <ion-item>
-        <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
-      </ion-item>
-      <div *ngIf="(email.dirty || email.touched) && email.errors" class="errors">
-        <span *ngIf="email.errors?.required">Email is required</span>
-        <span *ngIf="email.errors?.email">Email is invalid</span>
-      </div>
-      <ion-item>
-        <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
-      </ion-item>
-      <div *ngIf="(password.dirty || password.touched) && password.errors" class="errors">
-        <span *ngIf="password.errors?.required">Password is required</span>
-        <span *ngIf="password.errors?.minlength">Password needs to be 6 characters</span>
-      </div>
+  <div class="container">
+
+    <ion-icon id="logo" src="/assets/logo.svg"></ion-icon>
+
+    <h1 id="tag1">Iniciar Sesión</h1>
+    <p id="tag2">Al continuar, aceptas nuestra <span>Politica de Privacidad</span></p>
+
+    <div class="auth-providers">
+      <ion-button type="button" expand="block" fill="clear">
+        <ion-icon name="logo-google" slot="start"></ion-icon>
+        Continuar con Google
+      </ion-button>
+      <ion-button type="button" expand="block" fill="clear">
+        <ion-icon name="logo-facebook" slot="start"></ion-icon>
+        Continuar con Facebook
+      </ion-button>
     </div>
 
-    <ion-button type="submit" expand="block" [disabled]="!credentials.valid">Log in</ion-button>
-    <ion-button type="button" expand="block" color="light" fill="clear">Not yet a member? Sign up!
-    </ion-button>
+    <form (ngSubmit)="login()" [formGroup]="credentials">
 
-    <ion-button type="button" expand="block" color="tertiary">
-      <ion-icon name="logo-google" slot="start"></ion-icon>
-      Sign in with Google
-    </ion-button>
-    <ion-button type="button" expand="block" color="tertiary">
-      <ion-icon name="logo-apple" slot="start"></ion-icon>
-      Sign in with Apple
-    </ion-button>
-  </form>
+      <div class="input-group">
+        <ion-item>
+          <ion-input type="email" placeholder="Correo electronico" formControlName="email"></ion-input>
+        </ion-item>
+        <div *ngIf="(email.dirty || email.touched) && email.errors" class="errors">
+          <span *ngIf="email.errors?.required">El correo es requerido</span>
+          <span *ngIf="email.errors?.email">El correo es inválido</span>
+        </div>
+        <ion-item>
+          <ion-input type="password" placeholder="Contraseña" formControlName="password"></ion-input>
+        </ion-item>
+        <div *ngIf="(password.dirty || password.touched) && password.errors" class="errors">
+          <span *ngIf="password.errors?.required">La contraseña es requerida</span>
+          <span *ngIf="password.errors?.minlength">La contraseña debe ser de 6 caracteres</span>
+        </div>
+      </div>
+
+      <ion-button id="submit" type="submit" [disabled]="!credentials.valid" fill="clear">Iniciar Sesion</ion-button>
+    </form>
+    <a id="signup" (click)="signup()">Crea una cuenta!</a>
+  </div>
 </ion-content>

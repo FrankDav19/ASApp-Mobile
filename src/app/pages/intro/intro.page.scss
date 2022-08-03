@@ -1,0 +1,65 @@
+$beige: #E7EFCD;
+$orange: #C6C86C;
+$green: #7E8925;
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600;700&family=Julius+Sans+One&display=swap');
+
+
+ion-content {
+  border: .5rem;
+  border-style: solid;
+  border-color: $beige;
+  text-align: center;
+  overflow-y: hidden;
+}
+
+ion-icon {
+  width: 18rem;
+  height: 18rem;
+  margin: auto;
+  display: block;
+  margin-top: 10%;
+}
+
+.brand {
+  text-align: right;
+  display: block;
+  margin: 0;
+  padding-right: 3rem;
+}
+
+#brand1 {
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 28pt;
+  margin-bottom: .2rem;
+  color: $green
+}
+
+#brand2 {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-weight: 700;
+  font-size: 30pt;
+  margin-top: 0;
+  color: white;
+  -webkit-text-stroke: 1px $orange;
+}
+
+#signin{
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 15pt;
+  color: $green;
+  border-color: $green;
+  border-style: solid;
+  border-radius: 25px;
+  display: block;
+  width: fit-content;
+  margin: auto;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+}
+
+#signup{
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 15pt;
+  color: $green;
+}
