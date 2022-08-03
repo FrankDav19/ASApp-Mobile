@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  socketURL: 'http://localhost:3010',
-  apiURL: 'http://localhost:3010/ASAPI',
+  socketURL: 'http://asapirest.herokuapp.com/',
+  apiURL: 'http://asapirest.herokuapp.com/ASAPI',
   maptilerAPIKey: '45RbJRIixLAGHAvPPRA2'
 };
 

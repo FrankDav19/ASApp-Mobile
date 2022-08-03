@@ -1,43 +1,41 @@
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <div class="container">
-      <div class="userPicture">
-        <ion-icon name="person-circle-outline"></ion-icon>
-      </div>
-      <div class="label">
-        <h1>Francisco<br>Davila</h1>
-        <a (click)="logout()">Cerrar Sesion</a>
-      </div>
+  <div class="container">
+    <div class="userPicture">
+      <ion-icon name="person-circle-outline"></ion-icon>
     </div>
-  </ion-header>
+    <div class="label">
+      <h1 *ngIf="this.USER_DATA">{{this.USER_DATA.name}}</h1>
+      <a (click)="logout()">Cerrar Sesion</a>
+    </div>
+  </div>
 
   <ion-list>
     <ion-list-header>Mi Cuenta</ion-list-header>
-        <ion-item>
-          <ion-icon slot="start" name="person-circle-outline"></ion-icon>
-          <ion-label>Perfil</ion-label>
-        </ion-item>
+    <ion-item>
+      <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+      <ion-label>Perfil</ion-label>
+    </ion-item>
 
-        <ion-item>
-          <ion-icon slot="start" name="cog-outline"></ion-icon>
-          <ion-label>Preferencias</ion-label>
-        </ion-item>
+    <ion-item>
+      <ion-icon slot="start" name="cog-outline"></ion-icon>
+      <ion-label>Preferencias</ion-label>
+    </ion-item>
 
-        <ion-item>
-          <ion-icon slot="start" src="assets/logo.svg"></ion-icon>
-          <ion-label>Mis Estaciones</ion-label>
-        </ion-item>
+    <ion-item>
+      <ion-icon slot="start" src="assets/logo.svg"></ion-icon>
+      <ion-label>Mis Estaciones</ion-label>
+    </ion-item>
 
     <ion-list-header>Centro de Conocimiento</ion-list-header>
-        <ion-item>
-          <ion-icon slot="start" name="library-outline"></ion-icon>
-          <ion-label>Tutoriales</ion-label>
-        </ion-item>
+    <ion-item>
+      <ion-icon slot="start" name="library-outline"></ion-icon>
+      <ion-label>Tutoriales</ion-label>
+    </ion-item>
 
-        <ion-item>
-          <ion-icon slot="start" name="help-circle-outline"></ion-icon>
-          <ion-label>Preguntas Frecuentes</ion-label>
-        </ion-item>
+    <ion-item>
+      <ion-icon slot="start" name="help-circle-outline"></ion-icon>
+      <ion-label>Preguntas Frecuentes</ion-label>
+    </ion-item>
   </ion-list>
 
 

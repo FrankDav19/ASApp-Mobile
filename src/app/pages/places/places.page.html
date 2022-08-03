@@ -1,12 +1,10 @@
-<ion-header collapse="condense">
+<ion-content [fullscreen]="true">
   <ion-toolbar>
     <ion-title size="large">Clima</ion-title>
   </ion-toolbar>
-  <ion-searchbar [formControl]="searchField" debounce="100" showCancelButton="focus" placeholder="Buscar ciudad o región" cancelButtonText="Cancelar">
+  <ion-searchbar [formControl]="searchField" debounce="100" showCancelButton="focus"
+    placeholder="Buscar ciudad o región" cancelButtonText="Cancelar">
   </ion-searchbar>
-</ion-header>
-
-<ion-content [fullscreen]="false">
 
   <app-fav-element [stationsInput]="Stations"></app-fav-element>
 
