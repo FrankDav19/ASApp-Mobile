@@ -33,7 +33,7 @@ export class AuthenticationService {
 
   login(credentials: {email, password}): Observable<any> {
     return this.http.post(`${environment.apiURL}/login`, credentials).pipe(
-      map((data: any) => data.token),
+      map((data: any) => data.userData),
       switchMap(token => {
         return from(Storage.set({key: TOKEN_KEY, value: JSON.stringify(token)}));
       }),
